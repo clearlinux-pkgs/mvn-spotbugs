@@ -4,12 +4,15 @@
 #
 Name     : mvn-spotbugs
 Version  : 3.1.9
-Release  : 1
+Release  : 2
 URL      : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
 Source0  : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
+Source1  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
+Source2  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-2.5 EPL-1.0 LGPL-2.1 MIT
+Requires: mvn-spotbugs-data = %{version}-%{release}
 Requires: mvn-spotbugs-license = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : buildreq-mvn
@@ -18,6 +21,14 @@ BuildRequires : buildreq-mvn
 Put the jar files for SpotBugs plugins in this directory.
 For example, you can download the fb-contrib plugin from:
 https://github.com/mebigfatguy/fb-contrib
+
+%package data
+Summary: data components for the mvn-spotbugs package.
+Group: Data
+
+%description data
+data components for the mvn-spotbugs package.
+
 
 %package license
 Summary: license components for the mvn-spotbugs package.
@@ -47,9 +58,20 @@ cp spotbugs/licenses/LICENSE-slf4j.txt %{buildroot}/usr/share/package-licenses/m
 cp spotbugs/licenses/LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-spotbugs/spotbugs_licenses_LICENSE.txt
 cp spotbugs/src/gui/edu/umd/cs/findbugs/gui2/help/License.html %{buildroot}/usr/share/package-licenses/mvn-spotbugs/spotbugs_src_gui_edu_umd_cs_findbugs_gui2_help_License.html
 cp spotbugs/src/main/java/edu/umd/cs/findbugs/gui/help/License.html %{buildroot}/usr/share/package-licenses/mvn-spotbugs/spotbugs_src_main_java_edu_umd_cs_findbugs_gui_help_License.html
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
+/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
 
 %files license
 %defattr(0644,root,root,0755)
