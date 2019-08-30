@@ -4,7 +4,7 @@
 #
 Name     : mvn-spotbugs
 Version  : 3.1.9
-Release  : 2
+Release  : 3
 URL      : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
 Source0  : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
 Source1  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
