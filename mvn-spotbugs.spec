@@ -4,15 +4,13 @@
 #
 Name     : mvn-spotbugs
 Version  : 3.1.9
-Release  : 5
+Release  : 6
 URL      : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
 Source0  : https://github.com/spotbugs/spotbugs/archive/3.1.9.tar.gz
 Source1  : https://plugins.gradle.org/m2/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.jar
 Source2  : https://plugins.gradle.org/m2/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
-Source3  : https://repo.gradle.org/gradle/libs-releases/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.jar
-Source4  : https://repo.gradle.org/gradle/libs-releases/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
-Source5  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
-Source6  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
+Source3  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
+Source4  : https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : AML Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-2.5 EPL-1.0 LGPL-2.1 MIT OLDAP-2.0
@@ -71,17 +69,11 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/gradle/plugin/com/githu
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.jar
-
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
-
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
 
 
 %files
@@ -91,8 +83,6 @@ cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/github/spotbugs/spo
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar
 /usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
-/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.jar
-/usr/share/java/.m2/repository/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
 /usr/share/java/.m2/repository/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.jar
 /usr/share/java/.m2/repository/gradle/plugin/com/github/spotbugs/spotbugs-gradle-plugin/1.6.9/spotbugs-gradle-plugin-1.6.9.pom
 
